@@ -150,7 +150,6 @@ export class UI {
     this.rasterize(row).forEach((rrow, r) => {
       let str = ''
       rrow.forEach((col: string, c: number) => {
-        const { width } = row[c] // the width with padding.
         const wrapWidth = this.negatePadding(row[c]) // the width without padding.
         let ts = col // temporary string used during alignment/padding.
         const strWidth = mixin.stringWidth(col.trim())

@@ -163,7 +163,7 @@ export class UI {
           const fn = align[(row[c].align as 'right'|'center')]
           ts = fn(ts, wrapWidth)
           if (mixin.stringWidth(ts) < wrapWidth) {
-            ts += ' '.repeat((width || 0) - mixin.stringWidth(ts) - 1)
+            ts = ts.padEnd(wrapWidth);
           }
         }
         // apply border and padding to string.

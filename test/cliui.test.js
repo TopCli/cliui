@@ -171,9 +171,9 @@ describe('cliui', () => {
 
       // it should right-align the second column.
       const expected = [
-        'i am a string          i am a second       i am a third string',
-        '                           string          that should be',
-        '                                           wrapped'
+        'i am a string          i am a second    i am a third string',
+        '                           string       that should be',
+        '                                        wrapped'
       ]
 
       ui.toString().split('\n').should.eql(expected)
@@ -194,8 +194,8 @@ describe('cliui', () => {
 
       // it should add left/right padding to columns.
       const expected = [
-        '    i have     i have      i have no',
-        '    padding  padding on    padding',
+        '    i have     i have     i have no',
+        '    padding  padding on   padding',
         '    on my     my right',
         '    left'
       ]

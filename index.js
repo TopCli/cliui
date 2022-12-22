@@ -10,9 +10,6 @@ export default function ui (opts) {
       return wcswidth(stripAnsi(str))
     },
     stripAnsi,
-
-
-
     wrap,
   })
 }

@@ -261,12 +261,12 @@ describe('cliui', () => {
       const ui = cliui()
 
       ui.div(
-        { text: 'i am a string', padding: [0, 0, 0, 0], border: true, width: 40, align: 'center' },
+        { text: chalk.bold('i am a string'), padding: [0, 0, 0, 0], border: true, width: 40, align: 'center' },
       )
 
       ui.toString().should.eql(
 `.--------------------------------------.
-|            i am a string             |
+|            ${chalk.bold('i am a string')}             |
 '--------------------------------------'`)
     })
   })

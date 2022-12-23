@@ -256,6 +256,19 @@ describe('cliui', () => {
 '--------------------------------------'| i am a second string                 |
                                         '--------------------------------------'`)
     })
+
+    it('preserve pads with ansi', () => {
+      const ui = cliui()
+
+      ui.div(
+        { text: chalk.bold('i am a string'), padding: [0, 0, 0, 0], border: true, width: 40, align: 'center' },
+      )
+
+      ui.toString().should.eql(
+`.--------------------------------------.
+|            ${chalk.bold('i am a string')}             |
+'--------------------------------------'`)
+    })
   })
 
   describe('wrap', () => {

@@ -162,7 +162,12 @@ export class UI {
           const fn = align[(row[c].align as 'right'|'center')]
           ts = fn(ts, wrapWidth)
           if (mixin.stringWidth(ts) < wrapWidth) {
-            ts = ts.padEnd(wrapWidth);
+            let requiredLength = wrapWidth;
+            if (ts !== mixin.stripAnsi(ts)) {
+              // includes ansi caracters to the string width.
+              requiredLength += ts.length - mixin.stringWidth(ts);
+            }
+            ts = ts.padEnd(requiredLength);
           }
         }
         // apply border and padding to string.
